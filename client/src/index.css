@@ -1,18 +1,25 @@
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: 100%;
 }
 
-.app-wrapper{
+.app-wrapper {
+    position: relative;
     min-height: 100vh;
-    background-image: url('/public/images/background-desktop.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+
+    background-image: 
+        url('/images/pattern-lines.svg'), 
+        url('/images/background-desktop.png');
+    
+    background-position: top right, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, cover; 
 }
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
