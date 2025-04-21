@@ -1,11 +1,10 @@
 export default function TicketForm() {
     return(
-       <div className="appWrapper">
+       <div className="app-wrapper">
             <div className="content-container">
                 <div className="header">
                     <div className="mini-text">
-                        <img src="" alt="logo"/>
-                        <h5>Coding Conf</h5>
+                        <img src="/public/images/logo-full.svg" alt="logo"/>
                     </div>
 
                     <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
