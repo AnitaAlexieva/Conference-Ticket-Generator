@@ -15,11 +15,12 @@ body {
         url('/images/pattern-lines.svg'), 
         url('/public/images/pattern-squiggly-line-bottom-desktop.svg'),
         url('/public/images/pattern-squiggly-line-top.svg'),
+        url('/public/images/pattern-circle.svg'),
         url('/images/background-desktop.png');
     
-    background-position: top right,bottom left, top 50px right, center;
-    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
-    background-size: contain, auto, auto, cover; 
+    background-position: top right,bottom left, top 50px right, center right 350px, center;
+    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat, no-repeat;
+    background-size: contain, auto, auto, auto, cover; 
 }
 
 
