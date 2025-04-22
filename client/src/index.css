@@ -1,10 +1,45 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: 100%;
+}
+
+h1{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 50px;
+    width: 700px;
+    text-align: center;
+}
+h4{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    opacity: 80%;
+    font-size: 25px;
+    margin-top: 0;
+}
+
+label{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 20px;
+    opacity: 90%;
+    margin: 0;
+}
+
+.info-p{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 12px;
+    opacity: 90%;
+    margin: 0;
 }
 
 .app-wrapper {
