@@ -32,7 +32,10 @@ export default function TicketForm() {
                 </form>
             </div>
 
+            <div className="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+                Coded by <a href="#">Your Name Here</a>.
             </div>
-       </div>
+        </div>
     )
 }
