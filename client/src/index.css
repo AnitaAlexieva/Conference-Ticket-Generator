@@ -57,6 +57,24 @@ label{
     background-repeat: no-repeat,no-repeat,no-repeat,no-repeat, no-repeat;
     background-size: contain, auto, auto, auto, cover; 
 }
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 20px 0;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
 
 
 .attribution { font-size: 11px; text-align: center; }
