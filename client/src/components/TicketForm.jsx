@@ -13,8 +13,8 @@ export default function TicketForm() {
                 <div className="ticket-container">
                     <form>
                         <label htmlFor="avatar">Upload Avatar</label>
-                        <div>
-                            <button name="avatar">Add</button>
+                        <div className="avatar-div">
+                            <button className="avatar-btn"><img src="/public/images/icon-upload.svg" alt="upload" /></button>
                             <h5>Drag and drop or click to upload</h5>
                         </div>
                             <p className="info-p"><img src="/public/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
