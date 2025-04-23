@@ -126,5 +126,17 @@ input{
     padding: 6px  10px;
 }
 
+.submit{
+    background-color: hsl(7, 88%, 67%);
+    color: black;
+    font-family: "Inconsolata", monospace;
+    font-weight: 800;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

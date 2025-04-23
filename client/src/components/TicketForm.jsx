@@ -28,7 +28,7 @@ export default function TicketForm() {
                         <label htmlFor="gitHub">GitHub Username</label>
                         <input type="text" name="gitHub" />
 
-                        <button type="submit">Generate My Ticket</button>
+                        <button className="submit" type="submit">Generate My Ticket</button>
                     </form>
                 </div>
 
