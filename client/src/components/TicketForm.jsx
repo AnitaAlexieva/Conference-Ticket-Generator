@@ -23,10 +23,10 @@ export default function TicketForm() {
                         <input type="text" name="name" />
 
                         <label htmlFor="">Email Address</label>
-                        <input type="email" name="email" />
+                        <input type="email" name="email" placeholder="example@gmail.com"/>
 
                         <label htmlFor="gitHub">GitHub Username</label>
-                        <input type="text" name="gitHub" />
+                        <input type="text" name="gitHub" placeholder="@yourusername"/>
 
                         <button className="submit" type="submit">Generate My Ticket</button>
                     </form>
