@@ -101,6 +101,9 @@ input{
     );
     margin: 10px 0;
 }
+.email-h{
+    color: hsl(7, 88%, 67%);
+}
 
 .name-h {
     background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
