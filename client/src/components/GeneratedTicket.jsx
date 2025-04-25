@@ -7,7 +7,7 @@ export default function GeneratedTicket() {
                         <img src="/public/images/logo-full.svg" alt="logo" />
                     </div>
 
-                    <h1>Congrats, <span className="name-h">Jonatan Kristof! Your ticket is ready.</span></h1>
+                    <h1>Congrats, <span className="name-h">Jonatan Kristof! </span>Your ticket is ready.</h1>
                     <h4 className="header-p ticket">We've emailed your ticket to <span className="email-h">jonathan@email.com</span> and will send updates in the run up event.</h4>
 
                     <div className="ticket-ready">
@@ -23,7 +23,7 @@ export default function GeneratedTicket() {
                                 </div>
                                 <div className="person-info">
                                     <h3>Jonatan Kristof</h3>
-                                    <h5><img src="/public/images/icon-github.svg" alt="github" /> @jonatankristof0101</h5>
+                                    <h5><img src="/public/images/icon-github.svg" alt="github" /> @jonatankristof0101   </h5>
                                 </div>
                             </div>
                         </div>

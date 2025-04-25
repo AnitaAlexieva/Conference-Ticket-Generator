@@ -102,6 +102,11 @@ input{
     margin: 10px 0;
 }
 
+.name-h {
+    background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .avatar-div{
     display: flex;
     flex-direction: column;
