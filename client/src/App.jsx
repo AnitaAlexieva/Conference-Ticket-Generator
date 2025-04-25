@@ -1,11 +1,15 @@
-import TicketForm from "./components/TicketForm"
+// import TicketForm from "./components/TicketForm"
+
+import GeneratedTicket from "./components/GeneratedTicket"
 
 
 function App() {
 
   return (
     <>
-      <TicketForm/>
+      {/* <TicketForm/> */}
+      
+      <GeneratedTicket/>
     </>
   )
 }
