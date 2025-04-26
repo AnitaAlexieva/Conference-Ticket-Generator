@@ -168,7 +168,7 @@ input{
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px; /* широчината на границата */
+    padding: 2px; 
     border-radius: 15px;
     background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
     -webkit-mask: 
@@ -176,10 +176,41 @@ input{
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    pointer-events: none; /* да не пречи на кликовете */
+    pointer-events: none;
 }
 
+.info-div{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 40px 0 0 0;
+}
 
+.avatar-img{
+    width: 70px;
+    border-radius: 10px;
+}
 
+.data{
+    margin: 0 0 0 45px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    opacity: 80%;
+    font-size: 14px;
+}
+.person-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.person-name{
+    margin: 0;
+}
+.github-profile{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
 .attribution { font-size: 11px; text-align: center; margin: 100px 0 0 0;}
 .attribution a { color: hsl(228, 45%, 44%); }

@@ -17,13 +17,13 @@ export default function GeneratedTicket() {
                                 <p className="data">Jan 31, 2025 / Austin, TX</p>
                             </div>
                             
-                            <div>
+                            <div className="info-div">
                                 <div>
-                                    <img src="/public/images/image-avatar.jpg" alt="avatar" />
+                                    <img className="avatar-img" src="/public/images/image-avatar.jpg" alt="avatar" />
                                 </div>
                                 <div className="person-info">
-                                    <h3>Jonatan Kristof</h3>
-                                    <h5><img src="/public/images/icon-github.svg" alt="github" /> @jonatankristof0101   </h5>
+                                    <h3 className="person-name">Jonatan Kristof</h3>
+                                    <h5 className="github-profile"><img src="/public/images/icon-github.svg" alt="github" /> @jonatankristof0101   </h5>
                                 </div>
                             </div>
                         </div>
