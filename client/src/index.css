@@ -149,6 +149,37 @@ input{
     margin: 10px 0;
     font-size: 17px;
 }
+.ticket-ready {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(
+        to bottom right,
+        hsla(252, 6%, 83%, 0.5),
+        hsla(245, 15%, 58%, 0.5),
+        hsla(245, 19%, 46%, 0.5)
+    );
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.ticket-ready::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* широчината на границата */
+    border-radius: 15px;
+    background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none; /* да не пречи на кликовете */
+}
+
+
 
 .attribution { font-size: 11px; text-align: center; margin: 100px 0 0 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
