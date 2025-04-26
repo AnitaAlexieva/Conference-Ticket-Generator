@@ -11,6 +11,7 @@ export default function GeneratedTicket() {
                     <h4 className="header-p ticket">We've emailed your ticket to <span className="email-h">jonathan@email.com</span> and will send updates in the run up event.</h4>
 
                     <div className="ticket-ready">
+                    <div className="circle top"></div>
                         <div className="ticket-content">
                             <div className="mini-text">
                                 <img src="/public/images/logo-full.svg" alt="logo" />
@@ -30,6 +31,7 @@ export default function GeneratedTicket() {
                         <div className="ticket-number">
                             <p className="number">#01609</p>
                         </div>
+                        <div className="circle bottom"></div>
                     </div>
                 </div>
             </div>
