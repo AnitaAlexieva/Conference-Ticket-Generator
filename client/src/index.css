@@ -156,9 +156,9 @@ input{
     border-radius: 15px;
     background: linear-gradient(
         to bottom right,
-        hsla(252, 6%, 83%, 0.5),
+        hsla(252, 56%, 83%, 0.5),
         hsla(245, 15%, 58%, 0.5),
-        hsla(245, 19%, 46%, 0.5)
+        hsla(245, 39%, 46%, 0.5)
     );
     margin-top: 30px;
     overflow: hidden;
@@ -170,13 +170,17 @@ input{
     inset: 0;
     padding: 2px; 
     border-radius: 15px;
-    background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    background: linear-gradient(to right, hsl(0, 0%, 100%),hsl(7, 86%, 67%));
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+}
+
+.ticket-content{
+    width: 300px;
 }
 
 .info-div{
@@ -211,6 +215,20 @@ input{
     display: flex;
     align-items: center;
     margin: 10px 0;
+}
+.ticket-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl; 
+    font-family: "Inconsolata", monospace;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    opacity: 0.3;
+    padding: 20px 0;
+    margin-left: 20px; 
+    border-left: 2px dashed hsla(0, 0%, 100%, 0.5);
 }
 .attribution { font-size: 11px; text-align: center; margin: 100px 0 0 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
