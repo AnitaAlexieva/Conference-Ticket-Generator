@@ -103,6 +103,7 @@ input{
 }
 input:hover{
     background:  rgba(255, 250, 255, 0.2);
+    cursor: pointer;
 }
 .email-h{
     color: hsl(7, 88%, 67%);
@@ -131,6 +132,7 @@ input:hover{
 
 .avatar-div:hover{
     background:  rgba(255, 250, 255, 0.2);
+    cursor: pointer;
 }
 
 .avatar-btn{
