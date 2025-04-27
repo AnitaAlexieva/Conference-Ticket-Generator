@@ -13,7 +13,7 @@ export default function TicketForm() {
                 <div className="ticket-container">
                     <form>
                         <label htmlFor="avatar">Upload Avatar</label>
-                        <div className="avatar-div">
+                        <div className="avatar-div" tabindex="0">
                             <button className="avatar-btn"><img src="/images/icon-upload.svg" alt="upload" /></button>
                             <h5>Drag and drop or click to upload</h5>
                         </div>
