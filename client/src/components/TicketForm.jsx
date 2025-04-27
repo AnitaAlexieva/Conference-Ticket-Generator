@@ -4,7 +4,7 @@ export default function TicketForm() {
             <div className="content-container">
                 <div className="header">
                     <div className="mini-text">
-                        <img src="/public/images/logo-full.svg" alt="logo" />
+                        <img src="/images/logo-full.svg" alt="logo" />
                     </div>
 
                     <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
@@ -14,10 +14,10 @@ export default function TicketForm() {
                     <form>
                         <label htmlFor="avatar">Upload Avatar</label>
                         <div className="avatar-div">
-                            <button className="avatar-btn"><img src="/public/images/icon-upload.svg" alt="upload" /></button>
+                            <button className="avatar-btn"><img src="/images/icon-upload.svg" alt="upload" /></button>
                             <h5>Drag and drop or click to upload</h5>
                         </div>
-                            <p className="info-p"><img src="/public/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
+                            <p className="info-p"><img src="/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
 
                         <label htmlFor="name">Full Name</label>
                         <input type="text" name="name" />
