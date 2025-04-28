@@ -1,4 +1,9 @@
+import { useLocation} from "react-router"
+
 export default function GeneratedTicket() {
+    const location = useLocation();
+    const info = location.state?.info; 
+
     return (
         <div className="app-wrapper">
             <div className="content-container">
@@ -7,8 +12,8 @@ export default function GeneratedTicket() {
                         <img src="/images/logo-full.svg" alt="logo" />
                     </div>
 
-                    <h1>Congrats, <span className="name-h">Jonatan Kristof! </span>Your ticket is ready.</h1>
-                    <h4 className="header-p ticket">We've emailed your ticket to <span className="email-h">jonathan@email.com</span> and will send updates in the run up event.</h4>
+                    <h1>Congrats, <span className="name-h">{info.name}! </span>Your ticket is ready.</h1>
+                    <h4 className="header-p ticket">We've emailed your ticket to <span className="email-h">{info.email}</span> and will send updates in the run up event.</h4>
 
                     <div className="ticket-ready">
                     <div className="circle top"></div>
@@ -23,8 +28,8 @@ export default function GeneratedTicket() {
                                     <img className="avatar-img" src="/images/image-avatar.jpg" alt="avatar" />
                                 </div>
                                 <div className="person-info">
-                                    <h3 className="person-name">Jonatan Kristof</h3>
-                                    <h5 className="github-profile"><img src="/images/icon-github.svg" alt="github" /> @jonatankristof0101   </h5>
+                                    <h3 className="person-name">{info.name}</h3>
+                                    <h5 className="github-profile"><img src="/images/icon-github.svg" alt="github" />{info.github}</h5>
                                 </div>
                             </div>
                         </div>
