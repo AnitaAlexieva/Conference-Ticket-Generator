@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function TicketForm() {
-    const [info, setInfo] = useState({});
+    const navigate = useNavigate();
 
     const getInfo = (e) => {
         e.preventDefault();
-
+    
         const formData = new FormData(e.target);
         const name = formData.get('name');
         const email = formData.get('email');
         const github = formData.get('gitHub');
-
-        setInfo({ name, email, github });
+      
+        if (!name || !email || !github) {
+            setError("All fields are required!");
+            return;
+        }
+      
+        navigate("/ticket", { state: { info: { name, email, github } } });
     };
-
-    console.log(info);
     
     return (
         <div className="app-wrapper">

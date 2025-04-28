@@ -1,15 +1,17 @@
+import { Route, Routes } from "react-router"
 import TicketForm from "./components/TicketForm"
 
-// import GeneratedTicket from "./components/GeneratedTicket"
+import GeneratedTicket from "./components/GeneratedTicket"
 
 
 function App() {
 
   return (
     <>
-      <TicketForm/>
-      
-      {/* <GeneratedTicket/> */}
+      <Routes>
+        <Route path="/" element={<TicketForm />} />
+        <Route path="/ticket" element={<GeneratedTicket />} />
+      </Routes>
     </>
   )
 }
