@@ -1,4 +1,21 @@
+import { useState } from "react";
+
 export default function TicketForm() {
+    const [info, setInfo] = useState({});
+
+    const getInfo = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const github = formData.get('gitHub');
+
+        setInfo({ name, email, github });
+    };
+
+    console.log(info);
+    
     return (
         <div className="app-wrapper">
             <div className="content-container">
@@ -11,9 +28,9 @@ export default function TicketForm() {
                     <h4 className="header-p">Secure your spot at next year's biggest coding conference.</h4>
                 </div>
                 <div className="ticket-container">
-                    <form>
+                    <form onSubmit={getInfo}>
                         <label htmlFor="avatar">Upload Avatar</label>
-                        <div className="avatar-div" tabindex="0">
+                        <div className="avatar-div" tabIndex="0">
                             <button className="avatar-btn"><img src="/images/icon-upload.svg" alt="upload" /></button>
                             <h5>Drag and drop or click to upload</h5>
                         </div>
@@ -28,7 +45,7 @@ export default function TicketForm() {
                         <label htmlFor="gitHub">GitHub Username</label>
                         <input type="text" name="gitHub" placeholder="@yourusername"/>
 
-                        <button className="submit" type="submit">Generate My Ticket</button>
+                        <button className="submit" type="submit" >Generate My Ticket</button>
                     </form>
                 </div>
 
