@@ -100,6 +100,7 @@ input{
         rgba(0, 0, 102, 0.3)
     );
     margin: 10px 0;
+    color: white;
 }
 input:hover{
     background:  rgba(255, 250, 255, 0.2);
