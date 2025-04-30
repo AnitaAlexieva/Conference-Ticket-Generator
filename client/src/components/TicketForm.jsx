@@ -5,6 +5,7 @@ export default function TicketForm() {
     const navigate = useNavigate();
     const [previewImg, setPreviewImg] = useState(null);
     const [error, setError] = useState(null)
+    const [emailError, setEmailError] = useState(null);
 
     const getInfo = (e) => {
         e.preventDefault();
@@ -16,6 +17,11 @@ export default function TicketForm() {
 
         if (!name || !email || !github) {
             setError("All fields are required!");
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setEmailError("Please enter a valid email address.");
             return;
         }
 
@@ -83,9 +89,12 @@ export default function TicketForm() {
                         <label htmlFor="name">Full Name</label>
                         <input type="text" name="name" />
 
-                        <label htmlFor="">Email Address</label>
-                        <input type="email" name="email" placeholder="example@gmail.com" />
+                        <label htmlFor="email">Email Address</label>
 
+                            <input className={emailError ? "email-error" : ""} type="text" name="email" placeholder="example@gmail.com" />
+
+
+                        {emailError && ( <p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {emailError}</p>)}
                         <label htmlFor="gitHub">GitHub Username</label>
                         <input type="text" name="gitHub" placeholder="@yourusername" />
 

@@ -283,6 +283,11 @@ input:focus{
 .error-message img {
     filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(350%) hue-rotate(345deg) brightness(101%) contrast(96%);
 }
+.email-error{
+    border: 2px solid hsl(7, 71%, 60%);
+    outline: none;
+
+}
 
 .attribution { font-size: 11px; text-align: center; margin: 100px 0 0 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
