@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 
 export default function TicketForm() {
     const navigate = useNavigate();
+    const [previewImg, setPreviewImg] = useState(null);
 
     const getInfo = (e) => {
         e.preventDefault();
@@ -19,10 +21,13 @@ export default function TicketForm() {
         navigate("/ticket", { state: { info: { name, email, github } } });
     };
 
-    const handleFileUpload = (e) =>{
-        const file = e.target.files;
-        console.log(file)
-    }
+    const handleFileUpload = (e) => {
+        const file = e.target.files[0]; // директно вземаш първия файл
+        if(file && file.size <=500*1024 && ['image/png', 'image/jpeg'].includes(file.type)){
+            const imageLink = URL.createObjectURL(file);
+            setPreviewImg(imageLink);
+        }
+    };
 
     return (
         <div className="app-wrapper">
@@ -40,9 +45,14 @@ export default function TicketForm() {
                         <label htmlFor="avatar">Upload Avatar</label>
                         <div className="avatar-div" tabIndex="0">
                             <label htmlFor="avatar-upload" className="avatar-btn">
-                                <img src="/images/icon-upload.svg" alt="upload" />
+                                {previewImg ?
+                                (
+                                    <img src={previewImg} alt="upload" />
+                                ):(
+                                    <img src="/images/icon-upload.svg" alt="upload" />
+                                )}
                             </label>
-                            <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
+                            <input id="avatar-upload" type="file" accept="image/*" onChange={handleFileUpload} style={{ display: 'none' }} />
                             <h5>Drag and drop or click to upload</h5>
                         </div>
 
