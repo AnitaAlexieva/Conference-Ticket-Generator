@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 export default function TicketForm() {
     const navigate = useNavigate();
     const [previewImg, setPreviewImg] = useState(null);
+    const [error, setError] = useState(null)
 
     const getInfo = (e) => {
         e.preventDefault();
@@ -22,11 +23,29 @@ export default function TicketForm() {
     };
 
     const handleFileUpload = (e) => {
-        const file = e.target.files[0]; // директно вземаш първия файл
-        if(file && file.size <=500*1024 && ['image/png', 'image/jpeg'].includes(file.type)){
+        const file = e.target.files[0];
+        const allowedTypes = ['image/jpeg', 'image/png'];
+
+        if(!file){
+            return
+        }
+
+        if(file.size >500*1024){
+            setError("The file is too large.The size must be max 500KB");
+            setPreviewImg(null);
+            return;
+        }
+
+        if(!allowedTypes.includes(file.type)){
+            setError("Invalid file type. Only JPG or PNG are allowed");
+            setPreviewImg(null);
+            return;
+        }
+
             const imageLink = URL.createObjectURL(file);
             setPreviewImg(imageLink);
-        }
+            setError(null);
+        
     };
 
     return (
@@ -52,11 +71,14 @@ export default function TicketForm() {
                                     <img src="/images/icon-upload.svg" alt="upload" />
                                 )}
                             </label>
-                            <input id="avatar-upload" type="file" accept="image/*" onChange={handleFileUpload} style={{ display: 'none' }} />
+                            <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
                             <h5>Drag and drop or click to upload</h5>
                         </div>
-
-                        <p className="info-p"><img src="/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
+                        {error ? (
+                             <p className="error-message">{error}</p>
+                        ):(
+                            <p className="info-p"><img src="/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
+                        )}
 
                         <label htmlFor="name">Full Name</label>
                         <input type="text" name="name" />
