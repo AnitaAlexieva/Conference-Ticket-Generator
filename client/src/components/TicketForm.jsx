@@ -75,7 +75,7 @@ export default function TicketForm() {
                             <h5>Drag and drop or click to upload</h5>
                         </div>
                         {error ? (
-                             <p className="error-message">{error}</p>
+                             <p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {error}</p>
                         ):(
                             <p className="info-p"><img src="/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
                         )}
