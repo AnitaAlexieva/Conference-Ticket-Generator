@@ -32,37 +32,37 @@ export default function TicketForm() {
         const file = e.target.files[0];
         const allowedTypes = ['image/jpeg', 'image/png'];
 
-        if(!file){
+        if (!file) {
             return
         }
 
-        if(file.size >500*1024){
+        if (file.size > 500 * 1024) {
             setError("The file is too large.The size must be max 500KB");
             setPreviewImg(null);
             return;
         }
 
-        if(!allowedTypes.includes(file.type)){
+        if (!allowedTypes.includes(file.type)) {
             setError("Invalid file type. Only JPG or PNG are allowed");
             setPreviewImg(null);
             return;
         }
 
-            const imageLink = URL.createObjectURL(file);
-            setPreviewImg(imageLink);
-            setError(null);
-        
+        const imageLink = URL.createObjectURL(file);
+        setPreviewImg(imageLink);
+        setError(null);
+
     };
 
-    const handleDropFile = (e) =>{
+    const handleDropFile = (e) => {
         e.preventDefault();
         const file = e.dataTransfer.files[0];
-        handleFileUpload({target:{files:[file]}})
+        handleFileUpload({ target: { files: [file] } })
     }
-    const handleDragOver = (e) =>{
+    const handleDragOver = (e) => {
         e.preventDefault();
     }
-    const handleDrageLeave = (e) =>{
+    const handleDrageLeave = (e) => {
         e.preventDefault()
     }
     return (
@@ -80,26 +80,30 @@ export default function TicketForm() {
                     <form onSubmit={getInfo}>
                         <label htmlFor="avatar">Upload Avatar</label>
                         <div className="avatar-div" tabIndex="0" onDragOver={handleDragOver} onDrop={handleDropFile} onDragLeave={handleDrageLeave}>
-                            <label htmlFor="avatar-upload" className="avatar-btn">
-                                {previewImg ?
+                            {previewImg ?
                                 (
-                                    <div className="avatar-content">
-                                        <img className="avatar-img" src={previewImg} alt="upload" />
-                                        <div className="buttons">
+                                    <label htmlFor="avatar-upload" className="avatar-label">
+                                        <div className="avatar-content">
+                                            <img className="avatar-img" src={previewImg} alt="upload" />
+                                            <div className="buttons">
                                                 <button className="remove-btn">Remove Image</button>
                                                 <button className="change-btn">Change Image</button>
+                                            </div>
                                         </div>
+                                    </label>
+                                ) : (
+                                    <div className="upload-wrapper">
+                                        <label htmlFor="avatar-upload" className="avatar-btn">
+                                            <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
+                                            <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
+                                        </label>
+                                        <h5>Drag and drop or click to upload</h5>
                                     </div>
-                                ):(
-                                    <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
                                 )}
-                            </label>
-                            <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
-                            <h5>Drag and drop or click to upload</h5>
                         </div>
                         {error ? (
-                             <p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {error}</p>
-                        ):(
+                            <p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {error}</p>
+                        ) : (
                             <p className="info-p"><img src="/images/icon-info.svg" alt="info" />  Upload your photo (JPG or PNG, max size: 500KB).</p>
                         )}
 
@@ -108,10 +112,10 @@ export default function TicketForm() {
 
                         <label htmlFor="email">Email Address</label>
 
-                            <input className={emailError ? "email-error" : ""} type="text" name="email" placeholder="example@gmail.com" />
+                        <input className={emailError ? "email-error" : ""} type="text" name="email" placeholder="example@gmail.com" />
 
 
-                        {emailError && ( <p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {emailError}</p>)}
+                        {emailError && (<p className="info-p error-message"><img src="/images/icon-info.svg" alt="info" /> {emailError}</p>)}
                         <label htmlFor="gitHub">GitHub Username</label>
                         <input type="text" name="gitHub" placeholder="@yourusername" />
 
