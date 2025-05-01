@@ -54,6 +54,17 @@ export default function TicketForm() {
         
     };
 
+    const handleDropFile = (e) =>{
+        e.preventDefault();
+        const file = e.dataTransfer.files[0];
+        handleFileUpload({target:{files:[file]}})
+    }
+    const handleDragOver = (e) =>{
+        e.preventDefault();
+    }
+    const handleDrageLeave = (e) =>{
+        e.preventDefault()
+    }
     return (
         <div className="app-wrapper">
             <div className="content-container">
@@ -68,7 +79,7 @@ export default function TicketForm() {
                 <div className="ticket-container">
                     <form onSubmit={getInfo}>
                         <label htmlFor="avatar">Upload Avatar</label>
-                        <div className="avatar-div" tabIndex="0">
+                        <div className="avatar-div" tabIndex="0" onDragOver={handleDragOver} onDrop={handleDropFile} onDragLeave={handleDrageLeave}>
                             <label htmlFor="avatar-upload" className="avatar-btn">
                                 {previewImg ?
                                 (
