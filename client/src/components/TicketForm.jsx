@@ -83,7 +83,13 @@ export default function TicketForm() {
                             <label htmlFor="avatar-upload" className="avatar-btn">
                                 {previewImg ?
                                 (
-                                    <img className="avatar-img" src={previewImg} alt="upload" />
+                                    <div className="avatar-content">
+                                        <img className="avatar-img" src={previewImg} alt="upload" />
+                                        <div className="buttons">
+                                                <button className="remove-btn">Remove Image</button>
+                                                <button className="change-btn">Change Image</button>
+                                        </div>
+                                    </div>
                                 ):(
                                     <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
                                 )}
