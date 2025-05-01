@@ -83,9 +83,9 @@ export default function TicketForm() {
                             <label htmlFor="avatar-upload" className="avatar-btn">
                                 {previewImg ?
                                 (
-                                    <img src={previewImg} alt="upload" />
+                                    <img className="avatar-img" src={previewImg} alt="upload" />
                                 ):(
-                                    <img src="/images/icon-upload.svg" alt="upload" />
+                                    <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
                                 )}
                             </label>
                             <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />

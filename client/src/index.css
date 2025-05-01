@@ -135,6 +135,12 @@ input:focus{
     margin: 10px 0;
 }
 
+.avatar-img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
 .avatar-div:hover{
     background:  rgba(255, 250, 255, 0.2);
     cursor: pointer;
@@ -152,7 +158,10 @@ input:focus{
     );
     border: 1px solid rgb(208, 206, 206);
     border-radius: 10px;
-    padding: 6px  10px;
+}
+
+.upload-icon{
+    padding: 6px 10px;
 }
 
 .submit{
