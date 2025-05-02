@@ -82,7 +82,7 @@ export default function TicketForm() {
                         <div className="avatar-div" tabIndex="0" onDragOver={handleDragOver} onDrop={handleDropFile} onDragLeave={handleDrageLeave}>
                             {previewImg ?
                                 (
-                                    <label htmlFor="avatar-upload" className="avatar-label">
+                                   
                                         <div className="avatar-content">
                                             <img className="avatar-img" src={previewImg} alt="upload" />
                                             <div className="buttons">
@@ -90,7 +90,7 @@ export default function TicketForm() {
                                                 <button className="change-btn">Change Image</button>
                                             </div>
                                         </div>
-                                    </label>
+                                   
                                 ) : (
                                     <div className="upload-wrapper">
                                         <label htmlFor="avatar-upload" className="avatar-btn">
