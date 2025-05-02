@@ -159,6 +159,11 @@ input:focus {
     rgba(137, 137, 157, 0.5));
 color: white;
 }
+
+.buttons button:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
 .avatar-img {
     width: 70px;
     height: 70px;
