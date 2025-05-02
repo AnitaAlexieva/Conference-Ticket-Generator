@@ -65,6 +65,13 @@ export default function TicketForm() {
     const handleDrageLeave = (e) => {
         e.preventDefault()
     }
+const handleRemoveImage = () => {
+    setPreviewImg(null);
+    setError(null);
+    if (fileInputRef.current) {
+        fileInputRef.current.value = null;
+    }
+};
     return (
         <div className="app-wrapper">
             <div className="content-container">
@@ -86,8 +93,8 @@ export default function TicketForm() {
                                         <div className="avatar-content">
                                             <img className="avatar-img" src={previewImg} alt="upload" />
                                             <div className="buttons">
-                                                <button className="remove-btn">Remove Image</button>
                                                 <button className="change-btn">Change Image</button>
+                                                <button type="button" className="remove-btn" onClick={handleRemoveImage}>Remove Image</button>
                                             </div>
                                         </div>
                                    
@@ -95,8 +102,8 @@ export default function TicketForm() {
                                     <div className="upload-wrapper">
                                         <label htmlFor="avatar-upload" className="avatar-btn">
                                             <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
-                                            <input id="avatar-upload" type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
                                         </label>
+                                            <input id="avatar-upload" ref={fileInputRef} type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
                                         <h5>Drag and drop or click to upload</h5>
                                     </div>
                                 )}
