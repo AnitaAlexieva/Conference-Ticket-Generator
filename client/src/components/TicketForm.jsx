@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 
 export default function TicketForm() {
@@ -6,6 +6,8 @@ export default function TicketForm() {
     const [previewImg, setPreviewImg] = useState(null);
     const [error, setError] = useState(null)
     const [emailError, setEmailError] = useState(null);
+    const fileInputRef = useRef(null);
+
 
     const getInfo = (e) => {
         e.preventDefault();
@@ -65,13 +67,21 @@ export default function TicketForm() {
     const handleDrageLeave = (e) => {
         e.preventDefault()
     }
-const handleRemoveImage = () => {
-    setPreviewImg(null);
-    setError(null);
-    if (fileInputRef.current) {
-        fileInputRef.current.value = null;
-    }
-};
+
+
+    const handleChangeImage = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
+    };
+
+    const handleRemoveImage = () => {
+        setPreviewImg(null);
+        setError(null);
+        if (fileInputRef.current) {
+            fileInputRef.current.value = null;
+        }
+    };
     return (
         <div className="app-wrapper">
             <div className="content-container">
@@ -87,23 +97,29 @@ const handleRemoveImage = () => {
                     <form onSubmit={getInfo}>
                         <label htmlFor="avatar">Upload Avatar</label>
                         <div className="avatar-div" tabIndex="0" onDragOver={handleDragOver} onDrop={handleDropFile} onDragLeave={handleDrageLeave}>
+                            <input
+                                id="avatar-upload"
+                                ref={fileInputRef}
+                                type="file"
+                                onChange={handleFileUpload}
+                                style={{ display: 'none' }}
+                            />
                             {previewImg ?
                                 (
-                                   
-                                        <div className="avatar-content">
-                                            <img className="avatar-img" src={previewImg} alt="upload" />
-                                            <div className="buttons">
-                                                <button className="change-btn">Change Image</button>
-                                                <button type="button" className="remove-btn" onClick={handleRemoveImage}>Remove Image</button>
-                                            </div>
+
+                                    <div className="avatar-content">
+                                        <img className="avatar-img" src={previewImg} alt="upload" />
+                                        <div className="buttons">
+                                            <button type="button" className="remove-btn" onClick={handleRemoveImage}>Remove Image</button>
+                                            <button type="button" className="change-btn" onClick={handleChangeImage}>Change Image</button>
                                         </div>
-                                   
+                                    </div>
+
                                 ) : (
                                     <div className="upload-wrapper">
                                         <label htmlFor="avatar-upload" className="avatar-btn">
                                             <img className="upload-icon" src="/images/icon-upload.svg" alt="upload" />
                                         </label>
-                                            <input id="avatar-upload" ref={fileInputRef} type="file" onChange={handleFileUpload} style={{ display: 'none' }} />
                                         <h5>Drag and drop or click to upload</h5>
                                     </div>
                                 )}
