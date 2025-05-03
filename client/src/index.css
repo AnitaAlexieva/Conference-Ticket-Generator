@@ -113,6 +113,14 @@ input:hover {
 input:focus {
     box-shadow: 0 0 0 1px hsl(245, 15%, 58%), 0 0 0 3px black, 0 0 0 5px hsl(245, 15%, 58%);
 }
+input:-webkit-autofill{
+    transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-text-fill-color: white !important;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1),
+            rgba(0, 0, 102, 0.3)) !important;
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 102, 0.3) inset !important;
+}
 
 .email-h {
     color: hsl(7, 88%, 67%);
