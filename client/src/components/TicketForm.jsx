@@ -17,7 +17,7 @@ export default function TicketForm() {
         const email = formData.get('email');
         const github = formData.get('gitHub');
 
-        if (!name || !email || !github) {
+        if (!previewImg || !name || !email || !github) {
             setError("All fields are required!");
             return;
         }
@@ -27,7 +27,7 @@ export default function TicketForm() {
             return;
         }
 
-        navigate("/ticket", { state: { info: { name, email, github } } });
+        navigate("/ticket", { state: { info: { fileImg:previewImg, name, email, github } } });
     };
 
     const handleFileUpload = (e) => {
@@ -101,6 +101,7 @@ export default function TicketForm() {
                                 id="avatar-upload"
                                 ref={fileInputRef}
                                 type="file"
+                                name="file-img"
                                 onChange={handleFileUpload}
                                 style={{ display: 'none' }}
                             />

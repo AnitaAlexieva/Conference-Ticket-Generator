@@ -25,7 +25,7 @@ export default function GeneratedTicket() {
                             
                             <div className="info-div">
                                 <div>
-                                    <img className="avatar-img" src="/images/image-avatar.jpg" alt="avatar" />
+                                    <img className="avatar-img" src={info.fileImg} alt="avatar" />
                                 </div>
                                 <div className="person-info">
                                     <h3 className="person-name">{info.name}</h3>
