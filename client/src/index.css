@@ -360,5 +360,6 @@ color: white;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color:hsl(7, 71%, 60%);
+    text-decoration: none;
 }
