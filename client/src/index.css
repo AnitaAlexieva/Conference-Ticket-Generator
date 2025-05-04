@@ -362,9 +362,18 @@ color: white;
 .attribution a {
     color:hsl(7, 71%, 60%);
     text-decoration: none;
+}
+
 @media( max-width: 600px){
     .app-wrapper{
         position: absolute;
         min-height: 100vh;
+    }
+    h1{
+        width: 550px;
+    }
+    .header-p{
+        margin: 0 80px;
+    text-align: center;
     }
 }
