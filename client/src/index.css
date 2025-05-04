@@ -376,4 +376,8 @@ color: white;
         margin: 0 80px;
     text-align: center;
     }
+    form{
+        width: 550px;
+        height: 750px;
+    }
 }
