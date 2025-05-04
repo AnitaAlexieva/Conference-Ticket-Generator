@@ -380,4 +380,10 @@ color: white;
         width: 550px;
         height: 750px;
     }
+    .avatar-div{
+        height: 100px;
+    }
+    input{
+        padding: 20px;
+    }
 }
