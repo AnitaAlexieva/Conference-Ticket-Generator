@@ -367,14 +367,19 @@ color: white;
 @media( max-width: 600px){
     .app-wrapper{
         position: absolute;
-        min-height: 100vh;
+        min-height: 160vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     h1{
         width: 550px;
+        margin: 70px 0;
     }
     .header-p{
         margin: 0 80px;
-    text-align: center;
+        text-align: center;
+        font-size: 30px;
     }
     form{
         width: 550px;
@@ -384,6 +389,30 @@ color: white;
         height: 100px;
     }
     input{
-        padding: 20px;
+        padding: 25px;
+        margin: 20px 0;
     }
+    .ticket-ready{
+        margin-top: 80px;
+        width: 500px;
+        height: 200px;
+    }
+   .ticket-container{
+    margin: 0 20px;
+   }
+   label{
+    margin: 10px 0;
+   }
+   .submit{
+    padding: 25px;
+    font-size: 25px;
+    margin: 20px 0;
+   }
+   .ticket-content {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
 }
